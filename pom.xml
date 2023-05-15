@@ -21,11 +21,10 @@
   </properties>
 
   <modules>
-    <module>product-service</module>
+      <module>product-service</module>
       <module>discovery-service</module>
       <module>api-gateway</module>
       <module>review-service</module>
-    <module>recommendation-service</module>
     <module>recommendation-service</module>
     <module>config</module>
   </modules>
