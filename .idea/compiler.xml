@@ -32,6 +32,7 @@
       <module name="microservice" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
+      <module name="products-services" options="-parameters" />
       <module name="recommendation-service" options="-parameters" />
       <module name="review-service" options="-parameters" />
     </option>
