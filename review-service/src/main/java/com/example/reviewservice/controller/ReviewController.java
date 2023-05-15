@@ -22,7 +22,7 @@ public class ReviewController {
         reviewService.addReview(reviewRequest);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Review updateReview(@PathVariable Long id, @RequestBody Review review) {
         return reviewService.updateReview(id, review);
@@ -34,13 +34,13 @@ public class ReviewController {
         return reviewService.getReview(id);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteReview(@PathVariable Long id) {
         reviewService.deleteReview(id);
     }
 
-    @GetMapping("/all")
+    @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Review> getAllReviews(){
         return reviewService.getAllReviews();
