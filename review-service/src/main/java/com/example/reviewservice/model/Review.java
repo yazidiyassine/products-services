@@ -12,16 +12,15 @@ import javax.persistence.Id;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long review_id;
+    private Long reviewid;
 
-    private Long product_id;
+    private Long productid;
 
     private String author;
 

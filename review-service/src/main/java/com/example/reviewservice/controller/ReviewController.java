@@ -1,5 +1,7 @@
 package com.example.reviewservice.controller;
 
+import com.example.reviewservice.dto.ReviewRequestDto;
+import com.example.reviewservice.dto.ReviewResponseDto;
 import com.example.reviewservice.model.Review;
 import com.example.reviewservice.service.ReviewService;
 import lombok.RequiredArgsConstructor;
@@ -17,20 +19,20 @@ public class ReviewController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void addReview(@RequestBody Review reviewRequest) {
+    public void addReview(@RequestBody ReviewRequestDto reviewRequest) {
 
         reviewService.addReview(reviewRequest);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Review updateReview(@PathVariable Long id, @RequestBody Review review) {
+    public ReviewResponseDto updateReview(@PathVariable Long id, @RequestBody Review review) {
         return reviewService.updateReview(id, review);
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Review getReview(@PathVariable Long id) {
+    public ReviewResponseDto getReview(@PathVariable Long id) {
         return reviewService.getReview(id);
     }
 
@@ -40,9 +42,16 @@ public class ReviewController {
         reviewService.deleteReview(id);
     }
 
-    @GetMapping
+    @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public List<Review> getAllReviews(){
+
         return reviewService.getAllReviews();
+    }
+
+    @GetMapping("/product/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ReviewResponseDto> getReviewsByProductId(@PathVariable Long id) {
+        return reviewService.getReviewsByProductId(id);
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients("com.example.productcompositeservice.openfeign_products")
+@EnableFeignClients("com.example.productcompositeservice.openfeignClients")
 @EnableEurekaClient
 public class ProductCompositeServiceApplication {
 
