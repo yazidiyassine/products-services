@@ -19,9 +19,9 @@ public class ReviewController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void addReview(@RequestBody ReviewRequestDto reviewRequest) {
+    public ReviewResponseDto addReview(@RequestBody ReviewRequestDto reviewRequest) {
 
-        reviewService.addReview(reviewRequest);
+        return reviewService.addReview(reviewRequest);
     }
 
     @PutMapping("/{id}")
@@ -44,7 +44,7 @@ public class ReviewController {
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
-    public List<Review> getAllReviews(){
+    public List<Review> getAllReviews() {
 
         return reviewService.getAllReviews();
     }
